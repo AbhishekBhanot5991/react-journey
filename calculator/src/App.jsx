@@ -33,19 +33,17 @@ function App() {
         <form action="" className='form'>
           <div className='display'>
             <input type="text"  value={value} onKeyDown={(e) => {
-              if (e.keyCode === 13) {
-                handleEqual();
-                e.preventDefault();
-              } else {
-                handleButtonClick(e.key);
-              }
-            }} onKeyUp={(e) => {
-              if (e.keyCode === 8) {
-                handleDelete();
-              } else if (e.keyCode === 16) {
-                // Shift key is pressed
-              }
-            }} />
+                if (e.key.match(/[0-9]|[\+\-\*\/\.]|Enter/)) {
+                  if (e.key === 'Enter') {
+                    handleEqual();
+                    e.preventDefault(); 
+                  } else {
+                    handleButtonClick(e.key);
+                  }
+                } else {
+                  e.preventDefault(); // Prevent non-numeric keys from being entered
+                }
+              }} />
           </div>
           <div>
             <input type="button" value="AC" onClick={handleClear} />
