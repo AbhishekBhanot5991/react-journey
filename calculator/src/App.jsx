@@ -32,7 +32,20 @@ function App() {
 
         <form action="" className='form'>
           <div className='display'>
-            <input type="text"  value={value} />
+            <input type="text"  value={value} onKeyDown={(e) => {
+              if (e.keyCode === 13) {
+                handleEqual();
+                e.preventDefault();
+              } else {
+                handleButtonClick(e.key);
+              }
+            }} onKeyUp={(e) => {
+              if (e.keyCode === 8) {
+                handleDelete();
+              } else if (e.keyCode === 16) {
+                // Shift key is pressed
+              }
+            }} />
           </div>
           <div>
             <input type="button" value="AC" onClick={handleClear} />
