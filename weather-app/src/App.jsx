@@ -22,7 +22,7 @@ function App() {
       <h1>Weather App</h1>
       {weather && (
         <div>
-          <h2>Current Weather</h2>
+          <h2>Current London Weather</h2>
           <p>Temperature: {weather.main.temp}°C</p>
           <p>Humidity: {weather.main.humidity}%</p>
         </div>
