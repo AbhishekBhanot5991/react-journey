@@ -1,0 +1,16 @@
+.App{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card
+{
+  width: 25rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem;
+}
+.card form {
+  display: flex;
+  flex-direction: column;
+}
