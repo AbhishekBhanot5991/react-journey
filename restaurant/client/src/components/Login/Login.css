@@ -1,0 +1,40 @@
+.background{
+    height: 100vh;
+    background-image: url('../../assets/background.svg');
+    background-size: cover;
+    display: flex;
+    justify-content: end;
+    padding: 1rem 6rem;
+    align-items: center;
+    width: 100%;
+}
+.card{
+    background-color: #fff;
+    padding: 1.5rem ;
+    width: 25rem;
+
+}
+.card form{
+    display: flex;
+    flex-direction: column;
+}
+.card form input{
+    margin-bottom: .8rem;
+    padding: .5rem;
+
+}
+.card form label
+{
+    padding-bottom: .5rem;
+}
+.card form button{
+    width: fit-content;
+    padding: .5rem 1rem;
+    margin-left: auto;
+    border: none;
+    background-color: #000;
+    color: #fff;
+}
+.card span{
+    font-size: 12px;
+}
