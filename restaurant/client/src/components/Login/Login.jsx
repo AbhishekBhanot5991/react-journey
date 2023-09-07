@@ -33,8 +33,10 @@ const Login = (props) => {
     catch(error){
       if (error.response) {
         console.error('Login failed', error.response.data);
+        toast.error('Login failed');
       } else if (error.request) {
         console.error('Login request failed:', error.request);
+        toast.error('Login request failed');
       } else {
         console.error('Login error:', error.message);
         toast.error('Login failed');
@@ -50,7 +52,7 @@ const Login = (props) => {
             <input type="text" name='username' onChange={handleInputChange} value={formData.username}/>
             <label htmlFor="">Password</label>
             <input type="text" name='password' onChange={handleInputChange} value={formData.password}/>
-            <button type='submit'>Submit</button>
+            <button type='submit' variant="primary">Submit</button>
           </form>
           <span>Don't have an account??? <Link to='/register'>Register Here</Link></span>
         </div>

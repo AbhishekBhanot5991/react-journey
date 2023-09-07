@@ -1,3 +1,9 @@
+const User = require('../models/User');
+const Users = require('../models/Users');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const Employees = require('../models/Employee'); 
+
 exports.createUser = async (req, res) => {
     try {
       const { name, username, phone, email } = req.body;
@@ -97,10 +103,7 @@ exports.createUser = async (req, res) => {
 
   // server/controllers/yourController.js
 
-const User = require('../models/User');
-const Users = require('../models/Users');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+
 
 exports.register = async (req, res) => {
   try {
@@ -141,3 +144,77 @@ exports.login = async (req, res) => {
   }
 };
 
+//Employees
+
+exports.createEmployee = async (req, res) => {
+  try {
+    const { name, address, phone, email, salary} = req.body;
+
+    const newEmployee = new Employees({ name, address, email, phone, salary });
+    await newEmployee.save();
+    res.status(201).json({
+      message: 'Employee created Successfully',
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error: 'Employee Creation failed',
+      details: error.message, // Log the specific error message for debugging
+    });
+  }
+};
+
+exports.getEmployees = async(req,res)=>{
+  try{
+    //fetch all users from database
+    const employees = await Employees.find();
+
+    res.status(200).json(employees);
+  }
+  catch(error){
+    console.error(error);
+    res.status(500).json({
+      error:"failed to fetch Employees",
+      details: error.message, 
+    });
+  }
+}
+
+  // Get a specific employee by ID
+  exports.getEmployeeById = async (req, res) => {
+    try {
+      const employeeId = req.params.id;
+      const employee = await Employees.findById(employeeId);
+      if (!employee) {
+        return res.status(404).json({ error: 'Employee not found' });
+      }
+      res.status(200).json(employee);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Failed to fetch employee' });
+    }
+  };
+
+  //delete employee
+
+  exports.deleteEmployee = async (req, res) => {
+    try {
+      const employeeId = req.params.id;
+  
+      // Check if the employee exists
+      const employee = await Employees.findById(employeeId);
+  
+      if (!employee) {
+        return res.status(404).json({ error: 'Employee not found' });
+      }
+  
+      // If the employee exists, proceed with deletion
+      const deletedEmployee = await Employees.findByIdAndRemove(employeeId);
+  
+      res.status(200).json({ message: 'Employee deleted successfully' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Failed to delete employee' });
+    }
+  };
+  

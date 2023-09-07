@@ -3,3 +3,13 @@
     padding: 20px;
     
   }
+  .marginRight button{
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+    padding: .5rem;
+  }
+  .dashboard-form input{
+    width:100%;
+    padding: .5rem;
+    margin-bottom: .3rem;
+  }
