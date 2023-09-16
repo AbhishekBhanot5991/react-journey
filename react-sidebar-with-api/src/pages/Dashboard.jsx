@@ -44,7 +44,7 @@ const Dashboard = () => {
   const dataToDisplay = filteredData.slice(startIndex, endIndex);
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div className="h-100" style={{ display: "flex", justifyContent: "space-between" }}>
         <h2 className="mb-3">Dashboard</h2>
         <input
           type="text"
