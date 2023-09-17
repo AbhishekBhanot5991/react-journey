@@ -1,0 +1,6 @@
+.container1{
+    display: flex;
+}
+.buttons button{
+    margin-left: .5rem;
+}
