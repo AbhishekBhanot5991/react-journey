@@ -13,18 +13,20 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Sidebar>
-          <Routes>
-            <Route path="/" element={<Dashboard />}></Route>
-            <Route path="/dashboard" element={<Dashboard />}></Route>
-            <Route path="/about" element={<About />}></Route>
-            <Route path="/analytics" element={<Analytics />}></Route>
-            <Route path="/comments" element={<Comments />}></Route>
-            <Route path="/notifications" element={<Notifications />}></Route>
-            <Route path="/product" element={<Product />}></Route>
-            <Route path="/productlist" element={<ProductList />}></Route>
-          </Routes>
-        </Sidebar>
+         
+          <Sidebar>
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/comments" element={<Comments />} />
+              <Route path="/notifications" element={<Notifications />} />
+              <Route path="/product" element={<Product />} />
+              <Route path="/productlist" element={<ProductList />} />
+            </Routes>
+          </Sidebar>
+      
       </BrowserRouter>
       {/* <Sidebar/> */}
     </>
