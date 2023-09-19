@@ -1,0 +1,15 @@
+.loginForm{
+    text-align: center;
+}
+.loginForm form input{
+    margin-bottom: .5rem;
+    padding: .5rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    
+}
+.loginForm form button{
+    margin-bottom: .5rem;
+}
