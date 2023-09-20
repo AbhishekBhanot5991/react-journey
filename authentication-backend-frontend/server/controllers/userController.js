@@ -1,5 +1,5 @@
 import UserModel from "../models/User.js";
-import bcrypt from "bcrypt";
+import bcrypt, { genSalt } from "bcrypt";
 import Jwt from "jsonwebtoken";
 
 class UserController {
@@ -75,6 +75,22 @@ class UserController {
     } catch (error) {
         console.log(error)
         res.status(500).json({ status: "failed", message: "Unable to login" });
+    }
+  }
+
+  static changeUserPassword = async (re,res)=>{
+    const {password, password_confirmation} = req.body
+    if(password && password_confirmation){
+      if(password !== password_confirmation){
+        res.send({"status": "failed", "message": "new password and new confirm password doesn't match"})
+      }
+      else{
+        const salt = await bcrypt.genSalt(10)
+        const hashPassword = await bcrypt.hash(password, salt)
+      }
+    }
+    else{
+      res.send({"status": "failed", "message": "All fields are required"})
     }
   }
 }

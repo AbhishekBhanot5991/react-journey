@@ -10,6 +10,9 @@ export const useAuth = () => {
     try {
       // Call the loginUser function from the service here
       const response = await loginUser(userData);
+       // Log the response for debugging
+      console.log('Login response:', response);
+    if (response && response.status === "success") {
       const { user, token } = response;
 
       // Store the token in localStorage
@@ -18,6 +21,10 @@ export const useAuth = () => {
       // Update the user and token state
       setUser(user);
       setToken(token);
+      return response
+    }else {
+      throw new Error(response.message);
+    }
       // const user = await loginUser(userData);
       // setUser(user);
     } catch (error) {

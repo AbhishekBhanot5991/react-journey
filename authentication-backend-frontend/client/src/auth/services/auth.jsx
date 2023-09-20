@@ -19,6 +19,7 @@ export const loginUser = async (userData) => {
         Authorization: `Bearer ${localStorage.getItem('token')}` // Include the token in the request headers
       },
     });
+    console.log(response.data)
     return response.data;
   } catch (error) {
     throw error.response ? error.response.data : error.message;

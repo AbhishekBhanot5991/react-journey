@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "../components/LoginForm.css";
 import { useAuth } from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
@@ -20,25 +19,20 @@ const LoginForm = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const { email, password } = formData;
     try {
-      await login({ email, password });
-      // Redirect to the dashboard on successful login
-      navigate("/dashboard");
+      const result = await login({ email, password });
+        // Redirect to the dashboard on successful login
+        if(result.status === "success"){
+          navigate("/dashboard");
+        }
+ 
     } catch (error) {
       console.error(error);
     }
-
-    // Call the login function from the useAuth hook
-    // await login({ email, password });
-    // Clear the form fields after successful submission
-    // setFormData({
-    //   email: "",
-    //   password: "",
-    // });
-
   };
+  
 
 
   return (
