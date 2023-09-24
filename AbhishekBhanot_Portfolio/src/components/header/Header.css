@@ -1,0 +1,137 @@
+header{
+    /* height: 100vh; */
+    padding-top: 7rem;
+    overflow: hidden;
+}
+.header__container{
+    text-align: center;
+    height: 100%;
+    position: relative;
+}
+.header__container{
+    color: var(--color-black);
+}
+.cta{
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.header__socials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 3rem;
+}
+.Typewriter {
+    display: flex;
+    justify-content: center;
+}
+.Typewriter__cursor {
+    font-size: 2.5rem;
+    line-height: unset !important;
+}
+.Typewriter__wrapper,.Typewriter__wrapper h1{
+    line-height: unset !important; 
+}
+.header__socials::after{
+    content: '';
+    width: 1px;
+    height: 2rem;
+    background: var(--color-primary);
+}
+.first-sec-img {
+    height: 620px;
+    width: auto;
+    margin: 2rem auto 0rem auto;
+    object-fit: contain;
+}
+/* .me{
+    background: linear-gradient(var(--color-primary), transparent);
+    width: 22rem;
+    height: 30rem;
+    position: absolute;
+    left:calc(50% - 11rem);
+    margin-top: 4rem;
+    border-radius: 12rem 12rem 0 0;
+    overflow: hidden;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+} */
+/* .me img{
+    height:100%;
+} */
+.scroll__down{
+    position: absolute;
+    right: -2.3rem;
+    bottom: 25%;
+    transform: rotate(90deg);
+    font-weight: 300;
+    font-size: .9rem;
+}
+@media all and (min-width: 1281px) and (max-width: 1580px) {
+   
+    .first-sec-img {
+        height: 400px;
+    }
+}
+@media all and (min-width: 1024px) and (max-width: 1281px) {
+   
+    .first-sec-img {
+        height: 400px;
+    }
+}
+
+@media all and (min-width: 480px) and (max-width: 820px) { 
+   
+    .first-sec-img {
+        height: 420px !important;
+        }
+    /* .header__socials, .scroll__down{
+        display: none;
+        
+    } */
+}
+@media all and (max-width: 480px) {
+    .first-sec-img {
+        height: 230px;
+        margin-top:4rem;
+        }
+    .Typewriter__cursor {
+        font-size: 1.3rem;
+    }
+    header {
+        padding-top: 4rem;
+    }
+    .Typewriter__wrapper h1
+    {
+        font-size: 1.3rem;
+    }
+    .header__socials {
+        bottom: 1rem;
+        }
+    .header__container h5{
+        font-size:1rem;
+    }
+    .portfolio__item-image img {
+        height: 200px !important;
+        }
+    .cta a, .btn{
+        font-size: 12px !important;
+    }
+    .about__content p{
+        font-size: 14px;
+    }
+    .nav-pills .nav-items .nav-links{
+        font-size: 12px !important;
+    }
+    .tab-content-body img {
+        height: 200px !important;
+    }
+    .client__review{
+        font-size: 12px !important;
+    }
+ }

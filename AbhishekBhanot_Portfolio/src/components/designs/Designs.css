@@ -1,0 +1,32 @@
+.nav-link{
+    color:#fff !important;
+    border-radius: 0px !important;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: var(--color-primary);
+    border-radius: 10px !important;
+    }
+#services .nav-pills{
+    background-color: var(--color-bg-variant);
+    border-radius: 15px;
+padding: 1rem !important;
+}
+.tab-content-body{
+    /* background: #2b5876;  
+background: -webkit-linear-gradient(to right, #4e4376, #2b5876); 
+background: linear-gradient(to right, #4e4376, #2b5876);  */
+border-radius: 25px;
+}
+.tab-content-body img{
+    height: 300px;
+    width: 100%;
+    object-fit: fill;
+    margin-bottom: .5rem;
+}
+@media all and (min-width: 820px) and (max-width: 1080px) { }
+@media all and (min-width: 480px) and (max-width: 820px) {
+    .tab-content-body img {
+        height: 200px !important;
+        }
+ }
+@media screen and (max-width:480px) {}
