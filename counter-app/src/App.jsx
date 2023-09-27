@@ -5,6 +5,12 @@ import './App.css'
 function App() {
 const [count,setCount] = useState(0)
 
+const handleDecrement = () =>{
+  if(count>0){
+    setCount(count - 1)
+  }
+}
+
   return (
     <>
       <h1>Counter App</h1>
@@ -17,20 +23,17 @@ const [count,setCount] = useState(0)
       {/* here we are setting the display counts */}
       <h2>{count}</h2>
 
+      <div style={{display:'flex',justifyContent:'space-evenly'}}>
       {/* this is for increment  */}
       <button onClick={()=> setCount((count)=>count+1)}>Increment</button>
       
       {/* this is for decrement  */}
-      <button onClick={()=> setCount((count)=>count-1)}>Decrement</button>
+      <button onClick={handleDecrement}>Decrement</button>
 
       {/* this is to reset  */}
       <button onClick={()=> setCount(0)}>Reset</button>
+      </div>
 
-      <p>
-        Now notice when you click decrement button once the value is zero<br/>
-        it will go in minus we don't want that<br/>
-        in next project i'll solve this issue
-      </p>
     </>
   )
 }
